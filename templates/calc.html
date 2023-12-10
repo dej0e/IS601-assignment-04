@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Assignment 4 - DJ324</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <div class="container-sm pt-5">
+        <h3>Tip Calculator</h3>
+
+        <div class="mb-3">
+            <label for="subtotal-input" class="form-label">Enter Subtotal</label>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon3">$</span>
+                <input name="subtotal" type="number" class="form-control" id="subtotal-input"
+                       aria-describedby="basic-addon3 basic-addon4">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="tip-percentage-input" class="form-label">Enter Tip Percentage</label>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon3">$</span>
+                <input type="number" name="tip_percent" class="form-control"
+                       id="tip-percentage-input"
+                       aria-describedby="basic-addon3 basic-addon4">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Calculate</button>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="form-floating">
+            <input class="form-control" name="tip" value="{{ tip }}" id="tip-text" placeholder="Tip" disabled readonly>
+            <label for="tip-text">Tip</label>
+        </div>
+        <br>
+        <div class="form-floating">
+            <input class="form-control" name="total" value="{{ total }}" id="total-text" placeholder="Total" disabled
+                   readonly>
+            <label for="total-text">Total</label>
+        </div>
+    </div>
+
+</form>
+    <!--
+           _
+       .__(.)< (dj324)
+        \___)
+ ~~~~~~~~~~~~~~~~~~-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>
